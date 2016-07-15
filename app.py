@@ -2,6 +2,7 @@ from flask import Flask, redirect, url_for, render_template, request, Response, 
 from werkzeug import secure_filename
 import sqlite3, uuid, datetime
 from post import Post
+import sys
 app = Flask(__name__)
 app.config['SECRET_KEY'] = open('SECRET_KEY', 'r').read().split('\n')[0]
 IMAGES = tuple('jpg jpe jpeg png gif svg bmp ico, JPG, PNG'.split())
@@ -122,5 +123,5 @@ def account():
         conn.close()
         return redirect('/')
     return render_template('account.html', headers=headers)
-if __name__ == '__main__':
+if sys.argv[0] == "app.py":
     app.run(port=8765, debug=True, host='0.0.0.0')
