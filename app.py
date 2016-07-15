@@ -76,6 +76,9 @@ def dislike(ID):
 @app.route('/uploads/<fname>')
 def uploads(fname):
     return Response(open('uploads/' + fname, 'r').read(), mimetype="text/plain")
+@app.route('/fonts/<fname>')
+def fonts(fname):
+    return Response(open('fonts/' + fname, 'r').read(), mimetype="text/plain")
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST' and 'user' in session:
