@@ -1,0 +1,8 @@
+{% extends 'index.html' %}
+{% block body %}
+<form method="POST" action="/upload" enctype="multipart/form-data">
+    <textarea name='des' class='form-control' placeholder="Description..."></textarea><br>
+    <a onclick='document.getElementById("f").click();' class="btn btn-block btn-success">Choose File</a><input id='f' class='hidden' name='file' type='file' /><br>
+    <input class="btn btn-block btn-primary" type='submit' value="Upload"/>
+</form>
+{% endblock %}

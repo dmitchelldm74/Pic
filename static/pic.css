@@ -1,0 +1,50 @@
+.menu{
+    position:fixed;
+    top:0px;
+    left:0px;
+    background-color:#003F87;
+    width:100%;
+    height:7%;
+}
+.body{
+    position:absolute;
+    left:0px;
+    top:8%;
+}
+.centre{
+    float:left;
+    margin-left:25%;
+}
+img{
+    width:100%;
+}
+.u{
+    float:left;
+}
+.t{
+    float:right;
+    margin-left:5px;
+}
+#user{
+    margin-top:10px;
+}
+.h{
+    color:red;
+    font-size:35px;
+    left:0px;
+    position:relative;
+}
+.h_1{
+    left:2%;
+    top:0px;
+    font-size:30px;
+    position:relative;
+}
+#s{
+    width:0px;
+    height:0px;
+    border:none;
+    position:fixed;
+    left:0px;
+    top:0px;
+}

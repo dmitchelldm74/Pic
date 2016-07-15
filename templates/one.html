@@ -1,0 +1,7 @@
+<div class="panel panel-default" id="{{ data['id'] }}">
+    <div class="panel-heading"><div class='u'>{{ data['user'] }}</div>{% if data['user'] == session['user'] %}<div class=t><a href="{{ data['delete'] }}"><span class="glyphicon glyphicon-remove-circle"></span></a></div>{% endif %}<div class=t>{{ data['time'] }}</div><br></div>
+    <div class="panel-body">
+        <img src="{{ data['img'] }}">
+    </div>
+    <div class="panel-footer ft"><span onclick="heart(this, '{{ data['id'] }}');" class="{% if data['liked'] == False %}glyphicon glyphicon-heart-empty h{% else %}glyphicon glyphicon-heart h{% endif %}"><font color='black' style='font-size:20px;'>{{ data['likes'] }}</font></span> <des class='h_1'>{{ data['des'] }}</des></div>
+</div>

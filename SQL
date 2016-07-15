@@ -1,0 +1,4 @@
+CREATE TABLE users (user text, password text);
+CREATE TABLE viewers (owner text, viewer text);
+CREATE TABLE posts (owner text, img text, des text, id text, timestamp text);
+CREATE TABLE likes (id text, liker text);

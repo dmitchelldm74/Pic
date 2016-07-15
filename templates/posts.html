@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+{% block body %}
+{% autoescape false %}
+<script>
+function heart(el, ID){
+    if(el.className == 'glyphicon glyphicon-heart h'){
+        el.className = 'glyphicon glyphicon-heart-empty h';
+        window.location.href = 'http://' + window.location.href.split('/')[2] + '/dislike/' + ID;
+    }
+    else{
+        el.className = 'glyphicon glyphicon-heart h';
+        window.location.href = 'http://' + window.location.href.split('/')[2] + '/like/' + ID;
+    }
+}
+</script>
+{{ data }}
+{% endautoescape %}
+{% endblock %}

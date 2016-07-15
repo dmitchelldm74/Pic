@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pic</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+  <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+<link rel='stylesheet' href="{{ url_for('static', filename='pic.css') }}"/>
+<script>
+function id(elid){
+    return document.getElementById(elid);
+}
+function s(el){
+    if(el.value != ''){
+        id('s').src = 'http://' + window.location.href.split('/')[2] + '/s/' + el.value;
+        id('s2').innerHTML = id('s').contentWindow.document.body.innerHTML;
+    }
+    id('s2').width = el.width + 'px';
+}
+function text(t){
+    id('user').value = t;
+}
+</script>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-camera"></span> Pic</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+          <li><a href='/post'><span class="glyphicon glyphicon-file"></span> Post</a></li>
+          <li><form action='/+viewer' method='POST'><input onkeypress="s(this);" type='text' id="user" name='user' class="form-control" placeholder="Allow user to view account (enter to allow)"/></form></li>
+          <li><a href='/in.pop'><span class="glyphicon glyphicon-log-out"></span> Sign-Out</a></li>
+        </ul>
+      </div>
+    </nav>
+    <iframe id='s' src=''></iframe><div id=s2></div>
+    {% block body %}{% endblock %}
+</body>
+</html>
